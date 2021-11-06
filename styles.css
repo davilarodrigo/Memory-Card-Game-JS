@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+}
+
+.card__button{
+    
+}
+
+.card{
+    outline: 2px solid black;
+    display: inline-block;
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+}
