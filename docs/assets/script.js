@@ -7,7 +7,7 @@ let attempts_left
 let cards_flipped = 0
 let cards_discovered = 0
 
-const images_folder = "images/"
+const images_folder = "assets/images/"
 
 function click_card(e) {
     if (attempts_left) {
