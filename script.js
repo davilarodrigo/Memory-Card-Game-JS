@@ -7,6 +7,8 @@ let attempts_left
 let cards_flipped = 0
 let cards_discovered = 0
 
+const images_folder = "../docs/assets/images/"
+
 function click_card(e) {
     if (attempts_left) {
 
@@ -49,15 +51,15 @@ function click_card(e) {
 
 function cards_are_equal(card1, card2) {
     if (card1.getAttribute("card_number") == card2.getAttribute("card_number")) {
-        card1.setAttribute("src", "/docs/assets/images/solved.PNG")
-        card2.setAttribute("src", "/docs/assets/images/solved.PNG")
+        card1.setAttribute("src", images_folder + "solved.PNG")
+        card2.setAttribute("src", images_folder + "solved.PNG")
         card1.setAttribute("card_number", 0)
         card2.setAttribute("card_number", 0)
         cards_flipped = 0
         cards_discovered++
         attempts_left++
-        attempts_left++    
-        attempts_span.innerHTML = attempts_left    
+        attempts_left++
+        attempts_span.innerHTML = attempts_left
     }
     if (cards_discovered == game_difficulty) {
         alert("You Won!")
@@ -76,9 +78,9 @@ function reset_cards(card1, card2) {
 
 function set_card_image(card, number = false) {
     if (!number) {
-        card.setAttribute("src", "/docs/assets/images/backside.PNG")
+        card.setAttribute("src", images_folder + "backside.PNG")
     } else {
-        card.setAttribute("src", "/docs/assets/images/card" + number + ".PNG")
+        card.setAttribute("src", images_folder + "card" + number + ".PNG")
     }
 }
 
@@ -107,7 +109,7 @@ function reset_game() {
         game_difficulty_input.value = max_game_level
     }
 
-    attempts_left = game_difficulty * 3
+    attempts_left = game_difficulty * 2 + 5
     attempts_span.innerHTML = attempts_left
 
     let card_list = []
@@ -126,7 +128,7 @@ function reset_game() {
         card = document.createElement("div")
         button = document.createElement("button")
         img = document.createElement("img")
-        img.setAttribute("src", "/docs/assets/images/backside.PNG")
+        img.setAttribute("src", images_folder + "backside.PNG")
         card.appendChild(img)
         card.classList.add("card")
         fragment.appendChild(card)
