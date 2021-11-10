@@ -11,8 +11,6 @@ const images_folder = "../docs/assets/images/"
 
 function click_card(e) {
     if (attempts_left) {
-
-
         let card = e.target
 
         if (card === card_flipped_1) {
@@ -110,6 +108,10 @@ function reset_game() {
     }
 
     attempts_left = game_difficulty * 2 + 5
+    if (attempts_left % 2 == 1) {
+        attempts_left++
+    }
+
     attempts_span.innerHTML = attempts_left
 
     let card_list = []
