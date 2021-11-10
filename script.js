@@ -49,8 +49,8 @@ function click_card(e) {
 
 function cards_are_equal(card1, card2) {
     if (card1.getAttribute("card_number") == card2.getAttribute("card_number")) {
-        card1.setAttribute("src", "/cards/solved.PNG")
-        card2.setAttribute("src", "/cards/solved.PNG")
+        card1.setAttribute("src", "/docs/assets/images/solved.PNG")
+        card2.setAttribute("src", "/docs/assets/images/solved.PNG")
         card1.setAttribute("card_number", 0)
         card2.setAttribute("card_number", 0)
         cards_flipped = 0
@@ -62,7 +62,7 @@ function cards_are_equal(card1, card2) {
     if (cards_discovered == game_difficulty) {
         alert("You Won!")
     }
-    else if (attempts_left == 0) {
+    if (attempts_left == 0) {
         alert("you lost :c")
         reveal_cards()
     }
@@ -76,9 +76,9 @@ function reset_cards(card1, card2) {
 
 function set_card_image(card, number = false) {
     if (!number) {
-        card.setAttribute("src", "/cards/backside.PNG")
+        card.setAttribute("src", "/docs/assets/images/backside.PNG")
     } else {
-        card.setAttribute("src", "/cards/card" + number + ".PNG")
+        card.setAttribute("src", "/docs/assets/images/card" + number + ".PNG")
     }
 }
 
@@ -126,7 +126,7 @@ function reset_game() {
         card = document.createElement("div")
         button = document.createElement("button")
         img = document.createElement("img")
-        img.setAttribute("src", "/cards/backside.PNG")
+        img.setAttribute("src", "/docs/assets/images/backside.PNG")
         card.appendChild(img)
         card.classList.add("card")
         fragment.appendChild(card)
